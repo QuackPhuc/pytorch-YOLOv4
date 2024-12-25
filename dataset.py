@@ -298,7 +298,7 @@ class Yolo_dataset(Dataset):
             if img is None:
                 continue
             oh, ow, oc = img.shape
-            dh, dw, dc = np.array(np.array([oh, ow, oc]) * self.cfg.jitter, dtype=np.int)
+            dh, dw, dc = np.array(np.array([oh, ow, oc]) * self.cfg.jitter, dtype=np.int32)
 
             dhue = rand_uniform_strong(-self.cfg.hue, self.cfg.hue)
             dsat = rand_scale(self.cfg.saturation)
